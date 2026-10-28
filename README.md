@@ -6,10 +6,11 @@ Static landing page for Envision Print Services (braille business cards, flyers,
 
 ```
 public/
-  index.html        # the page (inline CSS + a small script that renders the braille dots)
-  favicon.svg
-  images/           # logos and photos
-vercel.json         # Vercel config: serves public/ with no build step
+  allyantbraille/   # everything lives here so the page works at workwithenvision.com/allyantbraille
+    index.html      # the page (inline CSS + a small script that renders the braille dots)
+    favicon.svg
+    images/         # logos and photos
+vercel.json         # serves public/ with no build step; / redirects to /allyantbraille
 ```
 
 ## Deploy to Vercel
