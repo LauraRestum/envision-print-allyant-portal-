@@ -8,7 +8,7 @@ Static landing page for Envision Print Services (braille business cards, flyers,
 public/
   allyantbraille/   # everything lives here so the page works at workwithenvision.com/allyantbraille
     index.html      # the page (inline CSS + a small script that renders the braille dots)
-    favicon.svg
+    favicon-*.png, icon-180.png, favicon.ico   # Envision icons, same as workwithenvision.com
     images/         # logos and photos
 vercel.json         # serves public/ with no build step; / redirects to /allyantbraille
 ```
