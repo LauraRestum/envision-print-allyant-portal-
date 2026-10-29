@@ -145,10 +145,12 @@ a:focus-visible{outline:3px solid var(--green);outline-offset:3px}
 .cap h3{margin-top:18px;font-size:20px;color:var(--heading)}
 .cap p{margin-top:8px;font-size:17px}
 
-.feature{margin-top:44px;position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:1400/620;max-width:100%}
-.feature img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.feature{margin-top:44px;position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:1400/560;max-width:100%}
+.feature .pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;height:100%;background:var(--band)}
+.feature img{display:block;width:100%;height:100%;object-fit:cover;object-position:62% 60%}
+.feature img.box{object-position:78% 40%}
 .feature figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 28px 22px;color:#FFFFFF;font-size:18px;font-weight:700;background:linear-gradient(180deg,transparent,rgba(0,26,56,.88))}
-@media (max-width:560px){.feature{aspect-ratio:auto}.feature img{height:auto;aspect-ratio:4/3;object-position:62% 60%}.feature figcaption{position:static;padding:14px 18px;font-size:16px;background:#002855}}
+@media (max-width:560px){.feature{aspect-ratio:auto}.feature img{height:auto;aspect-ratio:1/1}.feature figcaption{position:static;padding:14px 18px;font-size:16px;background:#002855}}
 .logo-link{display:inline-block;border-radius:8px;transition:opacity .2s,transform .2s}
 .logo-link:hover{opacity:.85;transform:translateY(-2px)}
 a.cap{display:block;text-decoration:none;color:inherit}
@@ -298,7 +300,10 @@ footer .env-logo{height:36px}
         <a class="btn" href="https://workwithenvision.com" target="_blank" rel="noopener">Explore more <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <a class="feature-link" href="https://workwithenvision.com/#print" target="_blank" rel="noopener"><figure class="feature">
-        <img src="/allyantbraille/images/braille-embosser-output.jpg" loading="lazy" decoding="async" alt="A freshly embossed braille page feeds out of an Index braille embosser.">
+        <div class="pair">
+          <img src="/allyantbraille/images/braille-embosser-output.jpg" loading="lazy" decoding="async" alt="A freshly embossed braille page feeds out of an Index braille embosser.">
+          <img class="box" src="/allyantbraille/images/envision-shipping-box.jpg" loading="lazy" decoding="async" alt="A shipping box sealed with an Envision label.">
+        </div>
         <figcaption>Your products, printed, packed, and shipped by Envision.</figcaption>
       </figure></a>
       <div class="cap-grid">
