@@ -21,7 +21,7 @@
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;padding:0}
 img{max-width:100%}
-/* Layout: deep navy opener with a raised-dot field (Allyant > line > Envision > title > two tactile product cards > custom request), white mission band, soft capabilities band, navy footer. envision.org web tokens. */
+/* Layout: deep navy opener with a raised-dot field (Allyant > line > Envision > title > three tactile product cards > custom request), white mission band, soft capabilities band, navy footer. envision.org web tokens. */
 :root{
   --navy:#002855; --blue:#003087; --green:#78BE21; --cyan:#41B6E6;
   --bg:#FFFFFF; --surface:#FFFFFF; --fg:#002855; --heading:#003087; --band:#F2F5FA;
@@ -88,6 +88,16 @@ a:focus-visible{outline:3px solid var(--green);outline-offset:3px}
 .flyer .bar{height:8px;border-radius:4px;background:#003087;width:70%}
 .flyer .bar.s{height:6px;background:#C9D3E3;width:90%}
 .flyer .bar.t{height:6px;background:#C9D3E3;width:60%}
+.menu{width:178px;height:226px;transform:rotate(-3deg);padding:18px 16px;display:flex;flex-direction:column;gap:11px}
+.menu .mt{font-size:13px;font-weight:800;letter-spacing:.14em;color:#002855;text-align:center}
+.menu .rule{flex:none;height:2px;background:#C9D3E3;border-radius:1px;margin-block:2px}
+.menu .item{display:flex;align-items:center;gap:8px}
+.menu .item .lead{flex:1;border-bottom:2px dotted #C9D3E3;height:0;margin-top:4px}
+.menu .bline{--d:5px;flex-wrap:nowrap}
+.menu .item .bline .bcell:last-child{margin-right:0}
+.card.wide{grid-column:1/-1;grid-template-rows:none;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
+.card.wide .stage{height:auto;min-height:280px}
+.card .note{font-size:16px}
 .card-body{padding:30px;display:flex;flex-direction:column;gap:16px}
 .card h2{font-size:clamp(24px,2.5vw,30px);color:var(--heading)}
 .specs{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
@@ -179,9 +189,12 @@ footer .env-logo{height:36px}
 @keyframes rise{from{transform:translateY(14px)}to{transform:none}}
 .lockup>*,.card,.custom{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
 .card:nth-child(2){animation-delay:.08s}
+.card:nth-child(3){animation-delay:.16s}
 
 @media (max-width:900px){
   .products,.mission .wrap,footer .wrap{grid-template-columns:minmax(0,1fr)}
+  .card.wide{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr}
+  .card.wide .stage{min-height:0;height:260px}
   .m-photo{min-height:0;aspect-ratio:3/2}
   .cap-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .mission .wrap,.caps .wrap{padding-block:64px;gap:36px}
@@ -205,7 +218,7 @@ footer .env-logo{height:36px}
         <span class="connector" aria-hidden="true"></span>
         <a class="logo-link" href="https://workwithenvision.com" target="_blank" rel="noopener"><img class="env-logo" src="/allyantbraille/images/envision-logo.png" alt="Envision"></a>
         <h1 id="page-title">Envision <span class="g">Print Services</span></h1>
-        <p class="sub">Braille business cards and documents, embossed in house and made in America.</p>
+        <p class="sub">Braille business cards, menus, and documents, embossed in house and made in America.</p>
         <ul class="chips" aria-label="At a glance">
           <li>Made in America</li>
           <li>In-house braille embossing</li>
@@ -247,12 +260,37 @@ footer .env-logo{height:36px}
           </div>
           <div class="card-body">
             <h2 id="fl-title">Braille Flyers and Flat Sheets</h2>
-            <p>Single, flat documents in braille: flyers, notices, menus, instructions, and other one-page materials.</p>
+            <p>Single, flat documents in braille: flyers, notices, instructions, and other one-page materials.</p>
             <dl class="specs">
               <div class="spec"><dt>Size</dt><dd>8.5" × 11"</dd></div>
               <div class="spec"><dt>Paper</dt><dd>#100 Smooth Cover</dd></div>
             </dl>
             <a class="btn" href="https://allyant.myprintdesk.net" target="_blank" rel="noopener">Order flyers and sheets <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <article class="card wide" aria-labelledby="mn-title">
+          <div class="stage" aria-hidden="true">
+            <span class="size">Menu</span>
+            <div class="paper menu">
+              <div class="mt">MENU</div>
+              <div class="bline" data-braille="⠍⠑⠝⠥"></div>
+              <div class="rule"></div>
+              <div class="item"><div class="bline" data-braille="⠎⠕⠥⠏"></div><span class="lead"></span><div class="bline" data-braille="⠼⠋"></div></div>
+              <div class="item"><div class="bline" data-braille="⠎⠁⠇⠁⠙"></div><span class="lead"></span><div class="bline" data-braille="⠼⠛"></div></div>
+              <div class="item"><div class="bline" data-braille="⠏⠊⠑"></div><span class="lead"></span><div class="bline" data-braille="⠼⠑"></div></div>
+              <div class="rule"></div>
+              <div class="item"><div class="bline" data-braille="⠞⠑⠁"></div><span class="lead"></span><div class="bline" data-braille="⠼⠃"></div></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h2 id="mn-title">Braille Menus</h2>
+            <p>Restaurant and cafe menus embossed in braille, so guests who read braille can read the menu on their own.</p>
+            <dl class="specs">
+              <div class="spec"><dt>Format</dt><dd>Embossed braille</dd></div>
+              <div class="spec"><dt>Turnaround</dt><dd>7 days</dd></div>
+            </dl>
+            <p class="note">Upload your menu for transcription. Pricing may change after you order, based on braille length.</p>
+            <a class="btn" href="https://allyant.myprintdesk.net/product/menu-allyant-1s/2158" target="_blank" rel="noopener">Order braille menus <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </article>
       </div>
